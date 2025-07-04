@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FiMonitor, FiSmartphone, FiDatabase } from 'react-icons/fi'
+import { FiMonitor } from 'react-icons/fi'
 
 const experiences = [
     {

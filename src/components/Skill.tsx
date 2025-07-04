@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FaPhp, FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa'
+import { FaPhp, FaReact, FaGitAlt } from 'react-icons/fa'
 import { TbApi } from "react-icons/tb";
 import { SiRedux, SiMysql, SiJavascript, SiHtml5, SiCss3, SiNextdotjs, SiFlutter, SiFirebase, SiJquery } from 'react-icons/si'
 
