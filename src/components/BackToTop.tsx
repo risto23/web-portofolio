@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { FaArrowUp } from 'react-icons/fa'
+import * as FaIcons from 'react-icons/fa'
 
 export default function BackToTop() {
     const [visible, setVisible] = useState(false)
@@ -29,7 +29,7 @@ export default function BackToTop() {
                 className="fixed bottom-5 right-5 p-3 bg-cyan-600 text-white rounded-full shadow-md hover:bg-cyan-500 transition"
                 aria-label="Back to top"
             >
-                <FaArrowUp />
+                <FaIcons.FaArrowUp />
             </button>
         )
     )

@@ -2,34 +2,35 @@
 
 import { useEffect, useState } from 'react'
 
+const WORDS = ['Fullstack Developer', 'Mobile Developer', 'Problem Solver', 'Creative Coder', 'Tech Enthusiast']
+
 export default function Typewriter() {
-    const words = ['Fullstack Developer', 'Mobile Developer', 'Problem Solver', 'Creative Coder', 'Tech Enthusiast']
     const [text, setText] = useState('')
     const [wordIndex, setWordIndex] = useState(0)
     const [charIndex, setCharIndex] = useState(0)
 
     useEffect(() => {
-        const currentWord = words[wordIndex]
+        const currentWord = WORDS[wordIndex]
         if (charIndex < currentWord.length) {
             const timeout = setTimeout(() => {
                 setText((prev) => prev + currentWord[charIndex])
-                setCharIndex(charIndex + 1)
-            }, 100)
+                setCharIndex((i) => i + 1)
+            }, 80)
             return () => clearTimeout(timeout)
         } else {
-            const timeout = setTimeout(() => {
+            const pause = setTimeout(() => {
                 setText('')
                 setCharIndex(0)
-                setWordIndex((wordIndex + 1) % words.length)
-            }, 1500)
-            return () => clearTimeout(timeout)
+                setWordIndex((w) => (w + 1) % WORDS.length)
+            }, 1400)
+            return () => clearTimeout(pause)
         }
-    }, [charIndex, wordIndex, words])
-      
+    }, [charIndex, wordIndex])
+
     return (
-        <span className=" text-xl md:text-2xl text-cyan-400">
+        <span className="text-xl md:text-2xl" style={{ color: 'var(--accent)' }}>
             {text}
-            <span className="animate-pulse">|</span>
+            <span className="cursor" aria-hidden="true"></span>
         </span>
     )
 }

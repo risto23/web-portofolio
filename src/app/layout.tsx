@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Outfit } from "next/font/google";
 import "./globals.css";
+import CustomCursor from "../components/CustomCursor";
+import ScrollProgress from "../components/ScrollProgress";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
 });
-
 export const metadata: Metadata = {
   title: "Risto Kurniawan | Portfolio",
   description: "Fullstack Developer Portfolio",
@@ -19,9 +20,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} bg-[var(--background)] text-[var(--foreground)]`}>
-       {children}
+    <html lang="en" className="scroll-smooth">
+      <body className={`${jakarta.variable} ${outfit.variable} font-sans bg-[var(--background)] text-[var(--foreground)] antialiased`}>
+        {/* Sembunyikan cursor asli di layar desktop karena digantikan CustomCursor */}
+        <style>{`
+         @media (min-width: 768px) { body * { cursor: none !important; } }
+       `}</style>
+
+        <CustomCursor />
+        <ScrollProgress />
+        {children}
       </body>
     </html>
   );
