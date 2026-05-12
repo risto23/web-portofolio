@@ -10,7 +10,8 @@ const allProjects = [
         title: 'POS Platform',
         category: 'Web',
         description: 'A multi-tenant web-based Point of Sale (POS) platform for retail and restaurants. Features include multi-outlet management, role access, cashier transactions, kitchen displays, and guest ordering.',
-        tech: ['Next.js', 'Prisma', 'PostgreSQL', 'TypeScript']
+        tech: ['Next.js', 'Prisma', 'PostgreSQL', 'TypeScript'],
+        demoUrl: 'https://pos.ristocodes.web.id/'
     },
     {
         year: 'Jan 2026 - Feb 2026',
@@ -24,7 +25,8 @@ const allProjects = [
         title: 'HRIS',
         category: 'Both',
         description: 'Local Human Resource Information System designed to support employee management, attendance tracking, leave requests, payroll slips, and HR reporting.',
-        tech: ['Next.js', 'Prisma', 'PostgreSQL', 'TypeScript']
+        tech: ['Next.js', 'Prisma', 'PostgreSQL', 'TypeScript'],
+        demoUrl: 'https://hris.ristocodes.web.id/login'
     },
     {
         year: 'Nov 2025 - Present',
@@ -127,7 +129,7 @@ export default function ProjectSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {filteredProjects.map((project, index) => (
                         <motion.div
-                            key={`${project.title}-${filter}`} // Memaksa animasi ulang saat filter diganti
+                            key={`${project.title}-${filter}`}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: index * 0.05 }}
@@ -159,20 +161,39 @@ export default function ProjectSection() {
                                         </>
                                     )}
                                 </div>
-                                {/* Link Icon (Opsional, arahkan href sesuai link github Anda) */}
                                 <div className="flex gap-3">
-                                    <a href="#" className="text-slate-500 hover:text-cyan-400 transition-colors" title="View Source">
-                                        <FiIcons.FiGithub size={20} />
-                                    </a>
-                                    <a href="#" className="text-slate-500 hover:text-cyan-400 transition-colors" title="Live Preview">
-                                        <FiIcons.FiExternalLink size={20} />
-                                    </a>
+                                    {project.demoUrl ? (
+                                        <a
+                                            href={project.demoUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-cyan-400 hover:text-cyan-300 transition-colors"
+                                            title="Live Preview"
+                                        >
+                                            <FiIcons.FiExternalLink size={20} />
+                                        </a>
+                                    ) : (
+                                        <span className="text-slate-600 cursor-default" title="Live Preview">
+                                            <FiIcons.FiExternalLink size={20} />
+                                        </span>
+                                    )}
                                 </div>
                             </div>
 
                             <span className="text-[11px] text-cyan-400 font-mono tracking-widest uppercase mb-2 block">{project.year}</span>
                             <h3 className="text-2xl font-bold text-white mb-3 font-heading tracking-tight">{project.title}</h3>
-                            <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow font-light">{project.description}</p>
+                            <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-grow font-light">{project.description}</p>
+
+                            {project.demoUrl && (
+                                <p className="text-[11px] text-slate-500 mb-4 leading-relaxed">
+                                    Want a private demo?{' '}
+                                    <a href="mailto:risto9f@gmail.com" className="text-cyan-400 hover:underline">Email me</a>
+                                    {' '}or reach out via{' '}
+                                    <a href="https://www.instagram.com/risto_15/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">Instagram</a>
+                                    {' '}/{' '}
+                                    <a href="https://www.linkedin.com/in/risto15/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">LinkedIn</a>.
+                                </p>
+                            )}
 
                             <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-white/5">
                                 {project.tech.map((tech, i) => (
