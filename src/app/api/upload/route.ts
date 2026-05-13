@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { validateUploadedFile, sanitiseFilename, generateStorageFilename } from '@/lib/fileValidation'
+import { validateUploadedFile, sanitiseFilename } from '@/lib/fileValidation'
 
 // App Router size limit — set in next.config.ts via `serverExternalPackages` or vercel.json
 // The `api.bodyParser` config is Pages Router only and is ignored here.
