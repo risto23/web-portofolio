@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, ChangeEvent } from 'react'
+import Image from 'next/image'
 import { validateFileClient, UPLOAD_CONFIG } from '@/lib/fileValidation'
 
 interface ImageUploadProps {
@@ -80,10 +81,13 @@ export default function ImageUpload({ label = 'Upload Image', onSuccess }: Image
       </p>
 
       {preview && (
-        <img
+        <Image
           src={preview}
           alt="Preview"
+          width={128}
+          height={128}
           className="w-32 h-32 object-cover rounded-lg border border-white/10"
+          unoptimized
         />
       )}
 

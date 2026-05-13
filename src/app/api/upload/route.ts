@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { validateUploadedFile, sanitiseFilename, generateStorageFilename, UPLOAD_CONFIG } from '@/lib/fileValidation'
+import { validateUploadedFile, sanitiseFilename, generateStorageFilename } from '@/lib/fileValidation'
 
 // App Router size limit — set in next.config.ts via `serverExternalPackages` or vercel.json
 // The `api.bodyParser` config is Pages Router only and is ignored here.
@@ -27,16 +27,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: result.error }, { status: 422 })
     }
 
-    // generateStorageFilename replaces the original name with a UUID to prevent
-    // polyglot attacks (e.g. file starting with FF D8 FF but containing PHP code).
-    const storageFilename = generateStorageFilename(file.name)
     const originalSafeName = sanitiseFilename(file.name)
 
     // ── TODO: save to storage (disk / S3 / Cloudinary / etc.) ─────────────
-    // IMPORTANT: save using `storageFilename` (UUID), NOT `originalSafeName`
-    // Store the mapping { originalSafeName, storageFilename } in your database
-    // Serve files via a proxy that sets: Content-Disposition: attachment
-    // Example: const url = await saveToStorage(file, storageFilename)
+    // Use generateStorageFilename(file.name) for a UUID-based name to prevent
+    // polyglot attacks. Store the mapping { originalSafeName, storageFilename }
+    // in your database. Serve via proxy with Content-Disposition: attachment.
+    // Example: const url = await saveToStorage(file, generateStorageFilename(file.name))
 
     return NextResponse.json(
       { message: 'File uploaded successfully.', filename: originalSafeName },
