@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\Risto\\\\Documents\\\\projek\\\\web-portofolio\\\\src\\\\lib\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\Risto\\\\Documents\\\\projek\\\\web-portofolio\\\\src\\\\app\\\\api\\\\upload\")",
+      "Bash(gh pr create --title 'feat: secure file upload with multi-layer RCE protection' --body ' *)"
     ]
   }
 }
