@@ -11,7 +11,7 @@ const allProjects = [
         category: 'Web',
         description: 'A multi-tenant web-based Point of Sale (POS) platform for retail and restaurants. Features include multi-outlet management, role access, cashier transactions, kitchen displays, and guest ordering.',
         tech: ['Next.js', 'Prisma', 'PostgreSQL', 'TypeScript'],
-        demoUrl: 'https://pos.ristocodes.web.id/'
+        demoUrl: 'https://kasir.ristocodes.web.id/'
     },
     {
         year: 'Jan 2026 - Feb 2026',
