@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-const WORDS = ['Fullstack Developer', 'Mobile Developer', 'Problem Solver', 'Creative Coder', 'Tech Enthusiast']
+const WORDS = ['Full Stack Developer', 'Mobile Developer', 'Problem Solver', 'Creative Coder', 'Tech Enthusiast']
 
 export default function Typewriter() {
     const [text, setText] = useState('')

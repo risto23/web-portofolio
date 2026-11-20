@@ -6,6 +6,28 @@ import * as FiIcons from 'react-icons/fi'
 
 const allProjects = [
     {
+        year: 'Nov 2026 - Present',
+        title: 'Simulasi Warga +62',
+        category: 'Web',
+        description: 'A text-based life simulation web game set in Indonesia. Built as a monorepo with a pure TypeScript game engine, a separate content package for cities, careers and events, and a static Next.js frontend.',
+        tech: ['Next.js', 'TypeScript', 'Zustand', 'Turborepo'],
+        demoUrl: 'https://jadiwarga62.vercel.app/'
+    },
+    {
+        year: 'Oct 2026 - Present',
+        title: 'HiGuard',
+        category: 'Both',
+        description: 'A multi-tenant SaaS for security guard companies: a web admin console plus a Capacitor mobile app for guards, built from one Next.js codebase, with camera, geolocation, QR scanning and push notifications.',
+        tech: ['Next.js', 'Capacitor', 'TypeScript', 'Node.js']
+    },
+    {
+        year: 'Oct 2026',
+        title: 'Catatan Keuangan',
+        category: 'Mobile',
+        description: 'An offline-first personal finance app. Records income, expenses and wallet transfers locally in SQLite, syncs to Supabase on demand, and shows monthly reports with charts and Excel export.',
+        tech: ['Flutter', 'SQLite', 'Supabase', 'Dart']
+    },
+    {
         year: 'Mar 2026 - Present',
         title: 'POS Platform',
         category: 'Web',

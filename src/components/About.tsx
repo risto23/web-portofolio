@@ -44,7 +44,7 @@ export default function About() {
                             I&apos;m a passionate software engineer dedicated to turning complex problems into elegant, scalable digital solutions. My tech journey began with a degree in Informatics from the <span className="text-cyan-400 font-semibold border-b border-cyan-400/30 pb-0.5">Institute of Technology Indonesia</span>.
                         </p>
                         <p>
-                            With over 5 years of solid experience as a <span className="text-white font-medium">Fullstack & Mobile Developer</span>, I specialize in engineering robust applications. From building seamless insurance platforms to integrating advanced biometric hardware, I leverage modern technologies like React Native, Flutter, Next.js, and PHP to deliver high-quality products.
+                            With over 5 years of solid experience as a <span className="text-white font-medium">Full Stack & Mobile Developer</span>, I specialize in engineering robust applications. From building seamless insurance platforms to integrating advanced biometric hardware, I leverage modern technologies like React Native, Flutter, Next.js, and PHP to deliver high-quality products.
                         </p>
                         <p>
                             I thrive in dynamic environments where I can continuously learn and push the boundaries of what&apos;s possible, delivering applications that don&apos;t just function well, but truly drive business operations forward.
